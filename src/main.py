@@ -1,5 +1,5 @@
 class bombaCombustivel:
-    def _init_(self, tipoCombustivel, valorLitro, quantidadeCombustivel):
+    def __init__(self, tipoCombustivel, valorLitro, quantidadeCombustivel):
         self.tipoCombustivel = tipoCombustivel
         self.valorLitro = valorLitro
         self.quantidadeCombustivel = quantidadeCombustivel
@@ -23,9 +23,17 @@ class bombaCombustivel:
     def alterarQuantidadeCombustivel(self, nova_quantidade):
         self.quantidadeCombustivel = nova_quantidade
 
+    def obterNivelCombustivel(self):
+        print(f"Nível atual da bomba de gasolina {self.quantidadeCombustivel}")
+        return self.quantidadeCombustivel
+
+bomba = bombaCombustivel("gasolina", 4, 500)
+bomba.abastecerPorLitro(50)
+bomba.obterNivelCombustivel()
+
 
 class Carro:
-    def _init_(self, consumo):
+    def __init__(self, consumo):
         self.consumo = consumo
         self.nivel_combustivel = 0
 
@@ -38,8 +46,23 @@ class Carro:
             print("Combustível insuficiente para percorrer a distância desejada.")
 
     def obterGasolina(self):
+        print(f"O nível de combustível atual é {self.nivel_combustivel}")
         return self.nivel_combustivel
+
 
     def adicionarGasolina(self, quantidade):
         self.nivel_combustivel += quantidade
+
+
+    
+audi = Carro(10); # 15 quilômetros por litro de 
+
+audi.adicionarGasolina(30); # abastece com 20 litros de 
+
+audi.andar(50); # anda 100 quilômetros.
+audi.obterGasolina() # Imprime o combustível que resta 
+
+
+
+    
 
